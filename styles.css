@@ -1,0 +1,125 @@
+/* CSS reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Font-Family */
+  --ff-alice: "Alice", serif;
+
+  /* Font size */
+  --fs-md: 1rem;
+  --fs-lg: 1.0675rem;
+  --fs-xl: 1.25rem;
+
+
+  /* Font weight */
+  --fw-regular: 400;
+
+  /* Line height */
+  --lh-140: 140%;
+  --lh-150: 150%;
+
+  /* Surface colors */
+  --bg-primary: #573824;
+  --bg-secondary: #F0E8C2;
+
+  /* Text colors */
+  --text-primary: #291B1A;
+  --text-secondary: #573A37;
+  --text-tertiary: #F0E8C2;
+}
+
+body {
+  font: var(--fw-regular) var(--fs-md)/var(--lh-150) var(--ff-alice);
+  color: var(--text-secondary);
+  margin-block: 3rem;
+  padding-inline: 1rem;
+  background: url('./assets/images/bg-image.svg') no-repeat center center/cover;
+
+
+  & h1,
+  & h2 {
+    font: inherit;
+    color: var(--text-primary);
+  }
+
+  h1 {
+    font-size: var(--fs-xl);
+    line-height: var(--lh-140);
+  }
+
+  h2 {
+    font-size: var(--fs-lg);
+    line-height: var(--lh-150);
+  }
+
+  & img {
+    max-width: 100%;
+  }
+
+  & main {
+    max-width: 47rem;
+    margin-inline: auto;
+    background-color: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+
+    & #main-content {
+      padding-block: 1.5rem;
+
+      & section {
+        & h2 {
+          margin-bottom: 0.25rem;
+        }
+
+        &#about {
+          & h1 {
+            margin-bottom: 0.25rem;
+          }
+
+          ul {
+            list-style: none;
+            margin-top: 0.75rem;
+          }
+        }
+
+        &#ingredients {
+          ul {
+            padding-left: 1.5rem;
+          }
+        }
+
+        &#how-to-prepare {
+          & p+p {
+            margin-top: 1.5rem;
+          }
+        }
+
+        &+section {
+          margin-top: 1.5rem;
+        }
+      }
+    }
+  }
+
+  & footer {
+    margin-top: 1.75rem;
+    text-align: center;
+    color: var(--text-tertiary);
+
+    & img {
+      vertical-align: middle;
+      margin-inline: 0.25rem;
+    }
+  }
+}
+
+@media (width >=48rem) {
+  :root {
+    --fs-lg: 1.5rem;
+    --fs-xl: 2.5rem;
+  }
+}
