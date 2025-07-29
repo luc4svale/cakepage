@@ -67,6 +67,10 @@ body {
     padding: 1.5rem;
     border-radius: 1.5rem;
 
+    & #main-image {
+      border-radius: 1rem;
+    }
+
     & #main-content {
       padding-block: 1.5rem;
 
